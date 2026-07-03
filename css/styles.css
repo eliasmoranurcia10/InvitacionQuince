@@ -17,9 +17,10 @@ body {
 #sobrecito {
   position: fixed;
   width: 320px;
-  height:auto;
+  height: 100vh;
   z-index: 2;
 }
+
 
 .contenido {
   width: 320px;
