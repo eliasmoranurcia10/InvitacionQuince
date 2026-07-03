@@ -1,11 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sobre = document.getElementById('sobrecito');
     const audio = new Audio('./audios/musica-fondo.mp3');
-    
+    let scrollLocked = true;
+
+    function preventScroll(e) {
+        if (!scrollLocked) return;
+        e.preventDefault();
+    }
+
+    function lockScroll() {
+        scrollLocked = true;
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    }
+
+    function unlockScroll() {
+        scrollLocked = false;
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
+    window.addEventListener('keydown', function(e) {
+        if (!scrollLocked) return;
+        const keys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' ', 'Escape'];
+        if (keys.includes(e.key)) e.preventDefault();
+    });
+
+    lockScroll();
+
     audio.loop = true;
 
     if (sobre) {
         sobre.addEventListener('click', function() {
+            unlockScroll();
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
             sobre.classList.toggle('abierto');
