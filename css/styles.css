@@ -16,14 +16,14 @@ body {
 
 #sobrecito {
   position: fixed;
-  width: 360px;
+  width: 414px;
   height: 100vh;
   z-index: 2;
 }
 
 
 .contenido {
-  width: 360px;
+  width: 414px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@ body {
 /*CUENTA REGRESIVA*/
 
 .tiempo-faltante {
-  width: 360px;
+  width: 414px;
   height: 100%;
 }
 
