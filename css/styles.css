@@ -37,7 +37,7 @@ body {
 
 .fondo-general {
   width: 100%;
-  min-height: 610px;
+  min-height: 800px;
   background-image: url('../images/fondo-sin-contenido.png');
   background-size: cover;
   background-position: center;
@@ -169,7 +169,7 @@ body {
 
 .fondo-fecha-hora-mapa {
   width: 100%;
-  min-height: 610px;
+  min-height: 800px;
   position: relative;
   background-image: url('../images/fondo-fecha-hora-mapa.png');
   background-size: cover;
@@ -182,8 +182,8 @@ body {
   top: 85.35%;
   left: 50%;
   transform: translateX(-50%);
-  width: 179.5px;
-  height: 48.35px;
+  width: 236px;
+  height: 64.6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +349,7 @@ body {
 /* Fondo de confirmación de asistencia */
 .fondo-confirmacion-asistencia {
   width: 100%;
-  min-height: 610px;
+  min-height: 800px;
   position: relative;
   background-image: url('../images/confirmacion-asistencia.png');
   background-size: cover;
@@ -363,8 +363,8 @@ body {
   top: 63.85%;
   left: 50.5%;
   transform: translateX(-50%);
-  width: 166px;
-  height: 44px;
+  width: 219.5px;
+  height: 58px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
