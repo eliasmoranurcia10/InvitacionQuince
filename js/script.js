@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sobre = document.getElementById('sobrecito');
     const audio = new Audio('./audios/musica-fondo.mp3');
+    
     let scrollLocked = true;
 
     function preventScroll(e) {
@@ -31,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
     lockScroll();
 
     audio.loop = true;
+
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            audio.pause();
+        } else if (audio.paused && audio.currentTime > 0) {
+            audio.play().catch(function() {
+                console.log('No se pudo reanudar el audio al volver a la página.');
+            });
+        }
+    });
 
     if (sobre) {
         sobre.addEventListener('click', function() {
