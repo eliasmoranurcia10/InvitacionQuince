@@ -31,6 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     lockScroll();
 
+    // Al recargar la página, asegurarse de que se muestre primero #sobrecito.
+    if (sobre) {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        sobre.scrollIntoView({ behavior: 'auto', block: 'start' });
+        window.scrollTo({ top: 0, left: 0 });
+    }
+
     audio.loop = true;
 
     document.addEventListener('visibilitychange', function() {
