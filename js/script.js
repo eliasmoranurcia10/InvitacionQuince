@@ -29,15 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (keys.includes(e.key)) e.preventDefault();
     });
 
+    // Al cargar la página, asegurarse de que se muestre primero #sobrecito.
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
     lockScroll();
 
-    // Al recargar la página, asegurarse de que se muestre primero #sobrecito.
     if (sobre) {
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        sobre.scrollIntoView({ behavior: 'auto', block: 'start' });
         window.scrollTo({ top: 0, left: 0 });
+        setTimeout(() => {
+            sobre.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }, 0);
     }
 
     audio.loop = true;
