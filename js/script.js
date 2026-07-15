@@ -162,3 +162,21 @@ setInterval(actualizarTemporizador,1000);
 actualizarTemporizador();
 
 
+// Función que aparece el elemento cuando se hace scroll hacia abajo y desaparece cuando se hace scroll hacia arriba
+
+const elementos = document.querySelectorAll('.oculto');
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('mostrar');
+        }
+    });
+});
+
+elementos.forEach(elemento => {
+    observer.observe(elemento);
+});

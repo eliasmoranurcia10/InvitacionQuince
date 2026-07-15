@@ -338,6 +338,17 @@ body {
   animation: brilloBoton 2.8s infinite;
 }
 
+.oculto {
+  opacity: 0;
+  transform:translateY(80px);
+  transition:all .8s ease;
+}
+
+.mostrar {
+  opacity: 1;
+  transform:translateY(0);
+}
+
 /* Línea dorada */
 .linea-dorada {
   width: 100%;
